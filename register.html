@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/shared.css" />
+    <link rel="stylesheet" href="assets/css/register.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <title>قطعنا</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="register-main-container">
+      <div id="register-container-Id" class="register-container">
+        <section id="register" class="shared-section">
+          <div id="reg-container" class="shared-container">
+            <div class="shared-intro">
+              <div id="rest-register-logo" class="logo-section"></div>
+
+              <div class="shared-content">
+                <h3 id="title-rest">مرحبًا بك في منصة "قطعنا"</h3>
+                <p id="content-rest">
+                  لإنشاء حساب خاص بمنشأتك، يرجى التحقق أولًا من بيانات السجل
+                  التجاري ثم استكمال معلومات المفوض.
+                </p>
+              </div>
+            </div>
+
+            <div class="shared-container-two">
+              <div id="reg-form" class="shared-form-mob-input">
+                <div class="first-reg">
+                  <label>رقم السجل التجاري أو الرقم الموحد</label>
+                  <div>
+                    <i class="fa-solid fa-key"></i>
+                    <hr />
+                    <input
+                      type="number"
+                      name="mobile"
+                      id="mobile"
+                      aria-label="mobile"
+                      placeholder="أدخل رقم السجل أو الرقم الموحد"
+                    />
+                  </div>
+                </div>
+                <div class="first-reg">
+                  <label>رقم الجوال المرتبط بالسجل</label>
+                  <div>
+                    <i class="bi bi-phone"></i>
+                    <hr />
+                    <input
+                      type="number"
+                      name="mobile"
+                      id="mobile"
+                      aria-label="mobile"
+                      placeholder="05XXXXXXXX"
+                    />
+                  </div>
+                </div>
+                <!--Complete registeration-->
+                <div class="rest-form">
+                  <label>اسم المفوض</label>
+                  <div>
+                    <input
+                      type="text"
+                      name="user-name"
+                      id="user-name"
+                      aria-label="user-name"
+                      placeholder="الاسم الثلاثي"
+                    />
+                  </div>
+                </div>
+
+                <div class="rest-form">
+                  <label>اسم المنشأة</label>
+                  <div>
+                    <input
+                      type="text"
+                      name="company-name"
+                      id="company-name"
+                      aria-label="company-name"
+                      placeholder="أدخل الاسم التجاري للمنشأة"
+                    />
+                  </div>
+                </div>
+
+                <div class="rest-form">
+                  <label>العنوان الوطني</label>
+                  <div>
+                    <input
+                      type="text"
+                      name="address"
+                      id="address"
+                      aria-label="address"
+                      placeholder="مثال: الرياض"
+                    />
+                  </div>
+                </div>
+
+                <div class="rest-form">
+                  <label>الرقم الضريبي</label>
+                  <div>
+                    <input
+                      type="number"
+                      name="tax-number"
+                      id="tax-number"
+                      aria-label="tax-number"
+                      placeholder="أدخل الرقم الضريبي المكون من 15 رقمًا"
+                    />
+                  </div>
+                </div>
+
+                <div class="rest-form">
+                  <label>البريد الإلكتروني</label>
+                  <div>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      aria-label="email"
+                      placeholder="example@domain.com"
+                    />
+                  </div>
+                </div>
+
+                <div class="rest-form">
+                  <label>رقم جوال المفوض</label>
+                  <div>
+                    <input
+                      type="number"
+                      name="mobile"
+                      id="mobile"
+                      aria-label="mobile"
+                      placeholder="05XXXXXXXX"
+                    />
+                  </div>
+                </div>
+                <!-------------------->
+              </div>
+
+              <div id="register-checkbox" class="policy-check rest-form">
+                <input type="checkbox" aria-label="check" />
+                <h6>أوافق على <span>الشروط والأحكام</span></h6>
+              </div>
+              <div class="shared-action-container">
+                <button
+                  id="submit-btn"
+                  class="shared-action-btn first-reg"
+                  data-name="register"
+                >
+                  <span>إرسال رمز التحقق</span>
+                  <i class="fa-solid fa-caret-left"></i>
+                </button>
+                <!------- Complete Reg Button-------->
+                <button
+                  id="create-btn"
+                  class="shared-action-btn rest-form"
+                  data-name="creat-accout"
+                >
+                  <span>إنشاء الحساب</span>
+                  <i class="fa-solid fa-caret-left"></i>
+                </button>
+                <!----------------------------------->
+              </div>
+
+              <div id="register-reglink" class="shared-href first-reg">
+                <a href="./login.html">تسجيل الدخول</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div id="support-footer"></div>
+        <div id="bg-rest-reg-bg"></div>
+      </div>
+      <div id="register-desc" class="d-background">
+        <svg
+          width="465"
+          viewBox="0 0 465 601"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0H465V377.655C465 400.929 465 412.566 460.191 422.723C455.382 432.881 446.381 440.256 428.378 455.006L295.878 563.571C265.538 588.43 250.368 600.86 232.5 600.86C214.632 600.86 199.462 588.43 169.122 563.571L36.6219 455.006C18.6193 440.256 9.618 432.881 4.809 422.723C0 412.566 0 400.929 0 377.655V0Z"
+            fill="#1E3A8A"
+          />
+        </svg>
+        <div class="desc">
+          <h3>قطع أصلية، جودة مضمونة.</h3>
+        </div>
+        <img src="./assets/images/register/registerBG.webp" alt="registerBg" />
+
+        <svg
+          viewBox="0 0 180 470"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M213 0L22.5372 125.187C8.47032 134.433 0 150.136 0 166.97V470H213V0Z"
+            fill="#EFEFEF"
+          />
+        </svg>
+        <svg
+          viewBox="0 0 180 470"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0L190.463 125.187C204.53 134.433 213 150.136 213 166.97V470H0V0Z"
+            fill="#EFEFEF"
+          />
+        </svg>
+        <img
+          class="logoImg"
+          src="./assets/images/logo/logo.webp"
+          alt="logoImg"
+        />
+      </div>
+    </div>
+
+    <script src="./assets/js/register.js"></script>
+    <script src="./assets/js/common.js"></script>
+  </body>
+</html>

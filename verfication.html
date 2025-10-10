@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/shared.css" />
+    <link rel="stylesheet" href="assets/css/verfication.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section id="verfication" class="shared-section">
+      <div class="shared-container">
+        <div class="shared-intro">
+          <div class="logo-section"></div>
+
+          <div class="shared-content">
+            <h3>أدخل رمز التحقق</h3>
+            <p>
+              .تم إرسال رمز مكون من 4 أرقام إلى رقم جوالك<br />الرجاء إدخال
+              الرمز .لتأكيد الدخول وإكمال العملية
+            </p>
+          </div>
+        </div>
+
+        <div class="shared-container-two">
+          <div class="form-pin-input">
+            <!-- Error message ABOVE PIN -->
+            <p id="pin-error" class="pin-error">
+              الرمز غير صحيح أو منتهي الصلاحية
+            </p>
+
+            <div class="pin-container">
+              <div class="pin-group">
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                  maxlength="1"
+                  class="pin-input"
+                  aria-label="inputs"
+                />
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                  maxlength="1"
+                  class="pin-input"
+                  aria-label="inputs"
+                />
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                  maxlength="1"
+                  class="pin-input"
+                  aria-label="inputs"
+                />
+              </div>
+              <span class="separator">-</span>
+              <div class="pin-group">
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                  maxlength="1"
+                  class="pin-input"
+                  aria-label="inputs"
+                />
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                  maxlength="1"
+                  class="pin-input"
+                  aria-label="inputs"
+                />
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                  maxlength="1"
+                  class="pin-input"
+                  aria-label="inputs"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="shared-action-container">
+            <!-- Timer message -->
+            <p id="resend-timer" class="timer-text hover">
+              إعادة الإرسال بعد
+              <span class="timer-number hover">60</span> ثانية
+            </p>
+            <button id="send-btn" class="shared-action-btn" type="button">
+              <div class="hover">
+                <span>تحقق من الكود</span>
+                <i class="fa-solid fa-caret-left"></i>
+              </div>
+
+              <div id="loader" class="loader">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </button>
+          </div>
+
+          <div class="shared-href hover">
+            <a id="link-action-effect">رقم غير صحيح؟ تعديل الرقم</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer id="support-footer"></footer>
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/verfication.js"></script>
+  </body>
+</html>

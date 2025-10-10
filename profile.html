@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <title>قطعنا</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Main Profile Section -->
+    <section id="profile-section">
+      <!-- Shared Navigation (Dynamic Rendering) -->
+      <div id="shared-nav"></div>
+
+      <!-- Profile Content Wrapper -->
+      <div class="profile-content">
+        <!-- Left Sidebar: Primary Navigation -->
+        <div class="first-part">
+          <div class="primary-nav">
+            <ul> 
+              <li class="profile-op hover">
+                <i class="fa-solid fa-user"></i>
+                <label>ملفي الشخصي</label>
+              </li>
+              <hr />
+              <li class="Products hover">
+                <i class="fa-solid fa-plus"></i>
+                <label>منتجاتي</label>
+              </li>
+              <hr />
+              <li class="offers hover">
+                <i class="fa-solid fa-ticket"></i>
+                <label>عروضي</label>
+              </li>
+              <hr />
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Main Content Area -->
+        <div class="second-part">
+          <!-- Secondary Navigation Container -->
+          <div class="nav-container">
+            <div id="profile-data" class="secondary-nav">
+              <ul class="profile-op">
+                <li class="basic-info hover">البيانات الأساسية</li>
+                <li class="profile-sett hover">إعدادات الحساب</li>
+                <li class="manage-dealer hover">إدارة المفوضين</li>
+                <li class="bank-account hover">بيانات الحساب البنكي</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Details Navigation Container: Holds All Profile Sub-Sections -->
+          <div class="details-nav-container">
+            <!-- Basic Information Section -->
+            <div class="basic-info">
+              <h3>بيانات الحساب الأساسية</h3>
+
+              <!-- Profile Introduction Card -->
+              <div class="intro-card">
+                <div class="profile-first-part">
+                  <div class="profile-img-holder">
+                    <img
+                      src="./assets/images/users/admin.png"
+                      alt="profileImg"
+                    />
+                  </div>
+
+                  <div class="profile-details">
+                    <h4>أحمد محمد السالم</h4>
+                    <label>
+                      <span>ID</span>
+                      <p>38476635483</p>
+                    </label>
+                  </div>
+                </div>
+                <div class="profile-intro-actions">
+                  <button>
+                    <img src="./assets/images/profile/profile.svg" alt="img" />
+                    <label>تغيير الصورة</label>
+                  </button>
+                  <button class="delete-btn">
+                    <i class="fa-solid fa-trash-can"></i>
+                    <label>حذف </label>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Basic Profile Form Fields (Read-Only) -->
+              <div class="profile-form-details">
+                <div class="field">
+                  <label>البريد الإلكتروني</label>
+                  <input
+                    type="email"
+                    aria-label="email"
+                    value="أحمد محمد السالم"
+                    readonly
+                  />
+                </div>
+
+                <div class="field">
+                  <label>اسم المؤسسة / الشركة</label>
+                  <input type="text" aria-label="text" readonly />
+                </div>
+
+                <div class="field">
+                  <label>البريد الإلكتروني</label>
+                  <input type="email" aria-label="email" readonly />
+                </div>
+
+                <div class="field">
+                  <label>رقم الجوال</label>
+                  <input type="number" aria-label="mobile" readonly />
+                </div>
+
+                <div class="field">
+                  <label>العنوان</label>
+                  <input type="text" aria-label="email" readonly />
+                </div>
+              </div>
+              <div class="form-action">
+                <button class="green-btn">
+                  <img src="./assets/images/profile/green img.svg" alt="img" />
+                  <label>تعديل البيانات</label>
+                </button>
+              </div>
+            </div>
+
+            <!-- Profile Settings Section -->
+            <div class="profile-sett">
+              <h3>إعدادات الحساب وتفضيلات الاستخدام</h3>
+              <div class="profile-form-details">
+                <div class="field">
+                  <label>كلمة المرور الجديدة</label>
+                  <div>
+                    <img
+                      src="./assets/images/profile/passwordIcon.svg"
+                      alt="img"
+                    />
+                    <input
+                      type="password"
+                      aria-label="email"
+                      placeholder="كلمة المرور الجديدة"
+                    />
+                    <i class="fa-solid fa-eye"></i>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label>تاكيد كلمة المرور الجديدة</label>
+                  <div>
+                    <img src="./assets/images/profile/confirmIcon.svg" alt="" />
+                    <input
+                      type="password"
+                      aria-label="text"
+                      placeholder="تاكيد كلمة المرور الجديدة"
+                    />
+                    <i class="fa-solid fa-eye-slash"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="form-action">
+                <button class="green-btn">
+                  <img src="./assets/images/profile/green img.svg" alt="img" />
+                  <label>تغيير كلمة المرور</label>
+                </button>
+              </div>
+
+              <!-- Address Holder Section -->
+              <div class="address-holder">
+                <div>
+                  <span>تلقائي</span>
+                  <div>
+                    <i class="fa-solid fa-pen"></i>
+                    <span>تعديل</span>
+                  </div>
+                </div>
+                <div>
+                  <label>الاسم:</label>
+                  <p>Ahmed Magdy</p>
+                </div>
+                <div>
+                  <label>العنوان:</label>
+                  <p class="truncate">
+                    3232, 8103 - الهاشمي - حي الملك سلمان - الرياض - امارة منطقة
+                    الرياض - منطقة الرياض - 12443, الرياض, المملكة العربية
+                    السعودية
+                  </p>
+                </div>
+              </div>
+              <!-- Button to Open Add Address Modal -->
+              <div class="add-address hover" id="openAddAddressBtn">
+                <i class="fa-solid fa-square-plus"></i>
+                <span>اضف عنوان جديد</span>
+              </div>
+
+              <!-- Add Address Modal -->
+              <div id="addAddressModal" class="modal">
+                <div class="modal-content">
+                  <span class="close-btn" id="closeAddressModalBtn">&times;</span>
+                  <h3>اضافة عنوان جديد</h3>
+
+                  <form class="address-form">
+                    <label>البلد / المنطقة</label>
+                    <div id="countryDropdownAdress" class="form-group custom-dropdown-type">  
+                       <div class="dropdown-selected-type">حدد البلد / المنطقة</div>  
+                         <ul class="dropdown-list hidden">  
+                           <li data-value="مصر">مصر</li>
+                           <li data-value="السعودية">السعودية</li>
+    
+                             <li data-value="الإمارات">الإمارات</li>
+                             <li data-value="الكويت">الكويت</li>
+                         </ul>
+  
+                        <input type="text" placeholder="ابحث عن بلد..." class="search-input" style="display: none;">
+                     </div>
+
+                    <p class="note">مهم جداً يمكن استخدامها للمساعدة في التوصيل</p>
+
+                    <div class="row">
+                      <div class="col">
+                        <label>الحي / الشارع</label>
+                        <input type="text" placeholder="الحي / الشارع" required />
+                      </div>
+                      <div class="col">
+                        <label>اسم / رقم المبني</label>
+                        <input type="text" placeholder="اسم / رقم المبني" required />
+                      </div>
+                    </div>
+
+                    <label>اقرب معلم لك</label>
+                    <input type="text" placeholder="اقرب معلم" required />
+
+                    <button type="submit" class="submit-btn">اضف العنوان</button>
+                  </form>
+                </div>
+              </div>
+
+              <hr class="address-splitter" />
+              <!-- Preferred Language and User Type Section -->
+              <div class="preferred-lang-user-type">
+                <div class="preferred-lang">
+                  <h4>اللغة المفضلة</h4>
+                  <div>
+                    <span>Ar</span>
+                    <hr />
+                    <i class="fa-solid fa-angle-down"></i>
+                  </div>
+                </div>
+
+                <div class="user-type">
+                  <h4>نوع المستخدم</h4>
+                  <p>مستخدم رئيسي / مفوض</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Manage Delegates Section -->
+            <div class="manage-dealer">
+              <!-- Delegates Introduction -->
+              <div class="dealer-intro">
+                <h3>المفوضون المسجلون</h3>
+                <button class="green-btn" id="openAddDelegateBtn">
+                  <img src="./assets/images/profile/dealer.svg" alt="img" />
+                  <label>إضافة مفوض جديد</label>
+                </button>
+                <!-- Add/Edit Delegate Modal -->
+                <div id="addDelegateModal" class="modal-overlay">
+                  <div class="modal-content add-delegate-modal">
+                    <div class="modal-header">
+                      <div class="modal-title">
+                        <img
+                          src="./assets/images/profile/dealer-black.svg"
+                          alt="img"
+                          id="delegateModalIcon"
+                        />
+                        <label id="delegateModalTitle">إضافة مفوض جديد</label>
+                      </div>
+                      <button id="closeAddDelegateBtn" class="close-modal">×</button>
+                    </div>
+
+                    <form class="delegate-form" id="delegateForm">
+                      <div class="form-group">
+                        <label>الاسم</label>
+                        <input type="text" id="delegateName" placeholder="ادخل اسم المفوض كامل" />
+                      </div>
+
+                      <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" id="delegateEmail" placeholder="ادخل البريد الإلكتروني" />
+                      </div>
+
+                      <div class="form-group">
+                        <label>رقم الجوال</label>
+                        <input type="text" id="delegatePhone" placeholder="ادخل رقم المفوض" />
+                      </div>
+
+                 <div class="form-group" id="delegateRoleGroup">
+    <label>الدور</label>
+    <div id="delegateRoleDropdown" class="form-group custom-dropdown-type">
+      <div class="dropdown-selected-type">حدد الدور</div>
+      <ul class="dropdown-list hidden">
+        <li data-value="مدير">مدير</li>
+        <li data-value="مفوض">مفوض</li>
+      </ul>
+    </div>
+    <input type="hidden" name="delegateRole" id="delegateRoleHidden" />
+  </div>
+
+  <div class="form-group">
+    <label>حالة الحساب</label>
+    <div id="delegateStatusDropdown" class="form-group custom-dropdown-type">
+      <div class="dropdown-selected-type">حالة الحساب</div>
+      <ul class="dropdown-list hidden">
+        <li data-value="active">مفعل</li>
+        <li data-value="inactive">غير مفعل</li>
+      </ul>
+    </div>
+    <input type="hidden" name="delegateStatus" id="delegateStatusHidden" />
+  </div>
+
+                      <button type="submit" class="green-submit" id="delegateSubmitBtn">
+                        <img src="./assets/images/profile/right.svg" alt="img" id="delegateSubmitIcon" />
+                        <label id="delegateSubmitLabel">أضف المفوض</label>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Delegates Table Wrapper -->
+              <div class="table-wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>الاسم</th>
+                      <th>البريد الإلكتروني</th>
+                      <th>رقم الجوال</th>
+                      <th>حالة الحساب</th>
+                      <th>آخر دخول</th>
+                      <th>خيارات</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>عبدالله الشمري</td>
+                      <td>abdullah@email.com</td>
+                      <td>+966 55 888 4444</td>
+                      <td><span class="status-active">مفعل</span></td>
+                      <td>2025/07/28 - 11:30ص</td>
+                      <td>
+                        <div class="options">
+                          <button>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                          </button>
+                          <ul class="dropdown">
+                            <li>
+                              <i class="fa-solid fa-pen"></i> تعديل بيانات
+                              المفوض
+                            </li>
+                            <li>
+                              <i class="fa-solid fa-rotate-left"></i> إعادة
+                              تعيين كلمة المرور
+                            </li>
+                            <li class="delete">
+                              <i class="fa-solid fa-trash"></i> حذف المفوض
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>عبدالله الشمري</td>
+                      <td>abdullah@email.com</td>
+                      <td>+966 55 888 4444</td>
+                      <td><span class="status-inactive">غير مفعل</span></td>
+                      <td>2025/07/28 - 11:30ص</td>
+                       <td>
+                        <div class="options">
+                          <button>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                          </button>
+                          <ul class="dropdown">
+                            <li>
+                              <i class="fa-solid fa-pen"></i> تعديل بيانات
+                              المفوض
+                            </li>
+                            <li>
+                              <i class="fa-solid fa-rotate-left"></i> إعادة
+                              تعيين كلمة المرور
+                            </li>
+                            <li class="delete">
+                              <i class="fa-solid fa-trash"></i> حذف المفوض
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>عبدالله الشمري</td>
+                      <td>abdullah@email.com</td>
+                      <td>+966 55 888 4444</td>
+                      <td><span class="status-inactive">غير مفعل</span></td>
+                      <td>2025/07/28 - 11:30ص</td>
+                      <td>
+                        <div class="options">
+                          <button>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                          </button>
+                          <ul class="dropdown">
+                            <li>
+                              <i class="fa-solid fa-pen"></i> تعديل بيانات
+                              المفوض
+                            </li>
+                            <li>
+                              <i class="fa-solid fa-rotate-left"></i> إعادة
+                              تعيين كلمة المرور
+                            </li>
+                            <li class="delete">
+                              <i class="fa-solid fa-trash"></i> حذف المفوض
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>عبدالله الشمري</td>
+                      <td>abdullah@email.com</td>
+                      <td>+966 55 888 4444</td>
+                      <td><span class="status-inactive">غير مفعل</span></td>
+                      <td>2025/07/28 - 11:30ص</td>
+                       <td>
+                        <div class="options">
+                          <button>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                          </button>
+                          <ul class="dropdown">
+                            <li>
+                              <i class="fa-solid fa-pen"></i> تعديل بيانات
+                              المفوض
+                            </li>
+                            <li>
+                              <i class="fa-solid fa-rotate-left"></i> إعادة
+                              تعيين كلمة المرور
+                            </li>
+                            <li class="delete">
+                              <i class="fa-solid fa-trash"></i> حذف المفوض
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Pagination (Dynamic Rendering) -->
+              <div id="pagination-section"></div>
+
+              <!-- Delete Delegate Confirmation Modal -->
+              <div id="deleteDelegateModal" class="delete-modal-overlay">
+                <div class=" delete-delegate-modal">
+                  <div class="modal-body">
+                    <div class="icon-circle">
+                      ,<img src="./assets/images/profile/delet.svg" alt="warning" />
+                    </div>
+                    <h3>هل أنت متأكد من حذف هذا المفوض؟</h3>
+                    <p>
+                      سيتم حذف حساب المفوض بشكل دائم، ولن يتمكن من الدخول أو إدارة أي جزء من النظام بعد الآن.<br />
+                      <a href="#">هذا الإجراء لا يمكن التراجع عنه.</a>
+                    </p>
+                    <div class="modal-actions">
+                      <button id="cancelDeleteBtn" class="cancel-btn">إلغاء</button>
+                      <button id="confirmDeleteBtn" class="confirm-btn">
+                        تأكيد الحذف <img src="./assets/images/profile/delet-icon.svg" alt="img" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bank Account Section -->
+            <div class="bank-account">
+              <h3>  إعدادات الدفع</h3>
+              <div class="bank-account-intro">
+                <h5>⚠️ تأكد أن رقم الـ IBAN صحيح ومطابق لاسم المؤسسة لتجنب أي تأخير في التحويلات.</h5>
+              </div>
+              <div class="profile-form-details">
+                <div class="field">
+                  <label>اسم البنك</label>
+                  <input type="text" aria-label="email" value="البنك الأهلي السعودي" readonly />
+                </div>
+
+                <div class="field">
+                  <label>اسم صاحب الحساب</label>
+                  <input type="text" aria-label="text" value="مؤسسة السالم للتجارة" readonly />
+                </div>
+
+                <div class="field">
+                  <label>رقم الحساب البنكي</label>
+                  <input type="text" aria-label="email" value="123456789" readonly />
+                </div>
+
+                <div class="field">
+                  <label> رقم الـ IBAN</label>
+                  <input type="text" aria-label="mobile" value="SA03 8000 0000 6080 1016 7519" readonly />
+                </div>
+              </div>
+              <div class="form-action">
+                 <button class="green-btn-light">
+                  <img src="./assets/images/profile/green-bank-account.svg" alt="img" />
+                  <label>   تعديل البيانات</label>
+                </button>
+                <button class="green-btn">
+                  
+                  <label>   حفظ البيانات</label>
+                </button>
+              </div>
+            </div>
+
+            <!-- Products Section -->
+            <div class="Products">
+              <!-- Products Introduction -->
+              <div class="products-intro">
+                <h3> منتجاتي</h3>
+                <div class="form-action">
+                  <button class="green-btn" id="openAddProductBtn">
+                    <img src="./assets/images/profile/pls.svg" alt="img" />
+                    <label>إضافة منتج جديد</label>
+                  </button>
+                </div>
+              </div>
+              <div id="services-items-list-container"></div>
+              <!-- Add New Product Modal -->
+              <div class="add-product-modal" id="addProductModal">
+                <div class="add-product-content">
+                  <div class="modal-header">
+                     <div class="modal-title">
+                                        <img src="./assets/images/profile/pls-black.svg" alt="img" />
+                                       <label>إضافة منتج جديد</label>
+                                      </div>
+                    <button class="close-modal" id="closeModalBtn">×</button>
+                  </div>
+
+                  <form class="add-product-form">
+                    <!-- Part Number Field -->
+                    <div class="form-group">
+                      <label>رقم القطعة</label>
+                      <input type="text" placeholder="مثال: 0E010-04465" />
+                    </div>
+
+                    <!-- Part Name Field -->
+                    <div class="form-group">
+                      <label>اسم القطعة</label>
+                      <input type="text" placeholder="مثال: فحمات فرامل أمامية" />
+                    </div>
+
+                    <!-- Available Quantity Field -->
+                    <div class="form-group">
+                      <label>الكمية المتاحة</label>
+                      <input type="number" placeholder="كم قطعة متوفرة عندك؟" />
+                    </div>
+
+                    <!-- Price Field -->
+                    <div class="form-group">
+                      <label>السعر</label>
+                      <input type="number" placeholder="حدد السعر" />
+                    </div>
+
+                    <!-- Part Category Field -->
+                    <div class="form-group">
+                      <label>فئة القطعة</label>
+                      <input type="text" placeholder="مثال: فرامل / فلتر / كهرباء..." />
+                    </div>
+
+                    <!-- Brand Field -->
+                    <div class="form-group">
+                      <label>البراند</label>
+                      <input type="text" placeholder="مثال: Toyota / TRW / غيره" />
+                    </div>
+
+                    <!-- Original Part Checkbox Group -->
+                    <div class="form-group checkbox-group">
+                      <label>هل القطعة أصلية؟</label>
+                      <div class="checkbox-options">
+                        <label><input type="checkbox" id="originalYes" /> نعم أصلية</label>
+                        <label><input type="checkbox" id="originalNo" /> لا ليست أصلية</label>
+                      </div>
+                    </div>
+
+                    <!-- Factory Field (Hidden Initially) -->
+                    <div class="form-group hidden" id="factoryField">
+                      <label>المصنع</label>
+                      <input type="text" placeholder="المصنع" />
+                    </div>
+
+                    <!-- Origin Country Field (Hidden Initially) -->
+                    <div class="form-group hidden" id="originCountryField">
+                      <label>بلد المنشأ</label>
+                      <input type="text" placeholder="بلد المنشأ" />
+                    </div>
+
+                    <!-- Warranty Checkbox Group -->
+                    <div class="form-group checkbox-group">
+                      <label>الضمان</label>
+                      <div class="checkbox-options">
+                        <label><input type="checkbox" id="warrantyYes" /> نعم</label>
+                        <label><input type="checkbox" id="warrantyNo" /> لا</label>
+                      </div>
+                    </div>
+
+                    <!-- Alternative Numbers Field (Hidden Initially) -->
+                    <div class="form-group hidden" id="altNumbersField">
+                      <label>الأرقام البديلة</label>
+                      <input type="text" placeholder="ادخل الأرقام البديلة" />
+                    </div>
+
+                    <!-- Months Field (Hidden Initially) -->
+                    <div class="form-group hidden" id="monthsField">
+                      <label>عدد الشهور</label>
+                      <input type="number" placeholder="عدد الشهور من 1 إلى 60" />
+                    </div>
+
+                    <!-- Additional Information Field -->
+                    <div class="form-group full">
+                      <label>معلومات إضافية <span>اختياري</span></label>
+                      <textarea placeholder="ادخل معلومات إضافية"></textarea>
+                    </div>
+
+                    <div >
+                        <button type="submit" class="green-submit">
+                      <img src="./assets/images/profile/right.svg" alt="img" />
+                      <label>حفظ المنتج </label>
+                    </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+<!-- Offers Section -->
+<div class="offers">
+
+  <!-- Products Introduction -->
+  <div class="products-intro">
+    <h3>عروضي</h3>
+
+    <div class="form-action" id="profile-section">
+    <img src="./assets/images/profile/filter.svg" alt="add" class="btn-icon" />
+
+      <div class="custom-dropdown">
+        <button id="dropdownButton" class="dropdown-button">
+          <div class="btn-content">
+            <img src="./assets/images/profile/pls.svg" alt="add" class="btn-icon" />
+            <span class="btn-label">إضافة عرض جديد</span>
+          </div>
+          <i class="fa fa-chevron-down"></i>
+        </button>
+
+        <ul id="dropdownMenu" class="dropdown-menu">
+          <li>  اختيار منتج موجود مسبقًا</li>
+          <li>  إدخال منتج جديد يدويًا</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal إضافة عرض جديد -->
+<div id="offerProductModal" class="custom-modal-overlay">
+  <div class="custom-modal">
+      <div class="modal-header">
+                     <div class="modal-title">
+                                        <img src="./assets/images/users/offernav.svg" alt="img" />
+                                       <label>اختيار منتج موجود مسبقًا</label>
+                                      </div>
+                    <button class="close-modal" id="closeOfferModal">×</button>
+                  </div>
+
+<!-- الخطوة الأولى: تحديد القطعة -->
+<div class="modal-step" id="step1">
+  <div class="modal-tabs">
+    <button class="tab active">حدد القطعة</button>
+    <button class="tab">بيانات العرض</button>
+  </div>
+
+  <div class="dropdown-wrapper">
+    <div class="dropdown-selected" id="selectedPart">
+      البحث بالاسم أو رقم القطعة
+    </div>
+    <div class="dropdown-list hidden" id="dropdownList">
+      <input
+        type="text"
+        class="dropdown-search"
+        id="searchPartInput"
+        placeholder="ابحث عن قطعة..."
+      />
+      <ul class="parts-list" id="partsList">
+        <li data-value="694875647">694875647 | كمبروسر مكيف</li>
+        <li data-value="857467899">857467899 | كمبروسر فورد</li>
+        <li data-value="987652345">987652345 | كمبروسر هوندا</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button class="prev-btn" disabled> <img src="./assets/images/profile/pre.svg"> <label>السابق</label>   </button>
+    <button class="next-btn" id="nextToStep2" disabled><label> التالى</label> <img src="./assets/images/profile/next.svg"></button>
+  </div>
+</div>
+
+
+    <!-- الخطوة الثانية: بيانات العرض -->
+    <div class="modal-step hidden" id="step2">
+      <div class="modal-tabs">
+        <button class="tab active handel"><img src="./assets/images/profile/rightform.svg"> <label> القطعة بيانات</label></button>
+        <button class="tab active">بيانات العرض</button>
+      </div>
+
+      <div class="offer-form">
+        <div class="form-group">
+          <label>السعر الخاص بالعرض</label>
+          <input type="text" placeholder="حدد السعر" />
+        </div>
+
+        <div class="form-group">
+          <label>الكمية</label>
+          <input type="text" placeholder="اكتب الكمية" />
+        </div>
+
+           <div class="form-group">
+          <label>الحد الأدنى للطلب</label>
+          <input type="text" placeholder="حدد الحد الأدنى للطلب" />
+        </div>
+
+       <!-- نوع العرض -->
+<div id="dropdownContainer1" class="form-group custom-dropdown-type">
+  <label>نوع العرض</label>
+  <div class="dropdown-container" id="offerTypeDropdown">
+    <div class="dropdown-selected-type" id="offerTypeSelected">حدد نوع العرض</div>
+    <ul class="dropdown-list hidden" id="offerTypeList">
+      <li data-value="continuous">مستمر حتى نفاذ الكمية</li>
+      <li data-value="limited">لفترة محددة</li>
+    </ul>
+  </div>
+</div>
+
+
+        <div class="form-group">
+          <label>تاريخ البداية</label>
+          <input type="date" />
+        </div>
+
+        <div class="form-group">
+          <label>تاريخ النهاية</label>
+          <input type="date" />
+        </div>
+
+      <div class="form-group form-toggle">
+  <label class="toggle-label">قابل للتمديد</label>
+  <label class="switch">
+    <input type="checkbox" />
+    <span class="slider round"></span>
+  </label>
+</div>
+
+      </div>
+
+      <div class="modal-footer-step2"> 
+          <button id="publishOffer" type="submit" class="green-submit">
+                      <img src="./assets/images/profile/right.svg" alt="img" />
+                      <label> نشر العرض </label>
+                    </button>
+                       <div>
+           <button id="backToStep1" class="prev-btn" > <img src="./assets/images/profile/pre.svg"> <label>السابق</label> </button>
+           <button class="next-btn"  disabled><label> التالى</label> <img src="./assets/images/profile/next.svg"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- الخطوة الثالثة: النجاح -->
+    <div class="modal-step hidden" id="successStep">
+      <div class="success-content">
+        <img
+          src="./assets/images/profile/success-icon.svg"
+          alt="success"
+          class="success-icon"
+        />
+        <h3>🎉 تم إضافة العرض بنجاح!</h3>
+        <p>
+          العرض الخاص بمنتجك أصبح ضمن صفحة العروض، <br> ويمكنك إدارته أو إيقافه في أي وقت من لوحة التحكم.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal إدخال منتج جديد يدويًا -->
+<div id="manualProductModal" class="custom-modal-overlay">
+  <div class="custom-modal">
+    <div class="modal-header">
+      <div class="modal-title">
+        <img src="./assets/images/users/offernav.svg" alt="img" />
+        <label>إدخال منتج جديد يدويًا</label>
+      </div>
+      <button class="close-modal" id="closeManualModal">×</button>
+    </div>
+
+    <!-- الخطوة الأولى -->
+    <div class="modal-step" id="manualStep1">
+      <div class="modal-tabs">
+        <button class="tab active">بيانات القطعة</button>
+        <button class="tab">بيانات العرض</button>
+      </div>
+
+      <form class="add-product-form">
+        <!-- رقم القطعة -->
+        <div class="form-group">
+          <label>رقم القطعة</label>
+          <input type="text" placeholder="مثال: 0E010-04465" />
+        </div>
+
+        <!-- اسم القطعة -->
+        <div class="form-group">
+          <label>اسم القطعة</label>
+          <input type="text" placeholder="مثال: فحمات فرامل أمامية" />
+        </div>
+
+        <!-- الكمية -->
+        <div class="form-group">
+          <label>الكمية المتاحة</label>
+          <input type="number" placeholder="كم قطعة متوفرة عندك؟" />
+        </div>
+
+        <!-- السعر -->
+        <div class="form-group">
+          <label>السعر</label>
+          <input type="number" placeholder="حدد السعر" />
+        </div>
+
+        <!-- فئة القطعة -->
+        <div class="form-group">
+          <label>فئة القطعة</label>
+          <input type="text" placeholder="مثال: فرامل / فلتر / كهرباء..." />
+        </div>
+
+        <!-- البراند -->
+        <div class="form-group">
+          <label>البراند</label>
+          <input type="text" placeholder="مثال: Toyota / TRW / غيره" />
+        </div>
+
+        <!-- أصلية أم لا -->
+        <div class="form-group checkbox-group">
+          <label>هل القطعة أصلية؟</label>
+          <div class="checkbox-options">
+            <label><input type="checkbox" id="manualOriginalYes" /> نعم أصلية</label>
+            <label><input type="checkbox" id="manualOriginalNo" /> لا ليست أصلية</label>
+          </div>
+        </div>
+
+        <div class="form-group hidden" id="manualFactoryField">
+          <label>المصنع</label>
+          <input type="text" placeholder="المصنع" />
+        </div>
+
+        <div class="form-group hidden" id="manualOriginCountryField">
+          <label>بلد المنشأ</label>
+          <input type="text" placeholder="بلد المنشأ" />
+        </div>
+
+<!-- ✅ Warranty Checkbox Group (نفس تصميم "هل القطعة أصلية؟" ولكن بأسماء مختلفة) -->
+<div class="form-group checkbox-group">
+  <label>الضمان</label>
+  <div class="checkbox-options">
+    <label><input type="checkbox" id="hasWarrantyYes" /> نعم</label>
+    <label><input type="checkbox" id="hasWarrantyNo" /> لا</label>
+  </div>
+</div>
+
+<!-- ✅ يظهر فقط عند اختيار "نعم" -->
+<div class="form-group hidden" id="warrantyMonthsField">
+  <label>عدد الشهور</label>
+  <input type="number" placeholder="عدد الشهور من 1 إلى 60" />
+</div>
+
+<div class="form-group hidden" id="warrantyAltNumbersField">
+  <label>الأرقام البديلة</label>
+  <input type="text" placeholder="ادخل الأرقام البديلة" />
+</div>
+
+
+
+        <!-- سياسة الاستبدال والاسترجاع -->
+        <div class="form-group checkbox-group">
+          <!-- <label>سياسة الاستبدال والاسترجاع</label> -->
+          <div class="checkbox-options">
+            <label><input type="checkbox" id="manualReturnPolicy" />  سياسة الاستبدال والاسترجاع</label>
+          </div>
+        </div>
+
+        <div class="form-group hidden full" id="manualReturnPolicyField">
+          <textarea placeholder="اكتب سياسة الاستبدال والاسترجاع بالتفصيل..."></textarea>
+        </div>
+          <!--  معلومات إضافية -->
+      <div class="form-group full">
+        <label>معلومات إضافية</label>
+        <textarea  placeholder="أدخل أي ملاحظات إضافية هنا"></textarea>
+      </div>
+      </form>
+
+      <div class="modal-footer">
+        <button class="prev-btn" disabled>
+          <img src="./assets/images/profile/pre.svg" /> <label>السابق</label>
+        </button>
+        <button class="next-btn" id="manualNextToStep2">
+          <label>التالي</label>
+          <img src="./assets/images/profile/next.svg" />
+        </button>
+      </div>
+    </div>
+
+    <!-- الخطوة الثانية والثالثة نفس القديمة -->
+    <div class="modal-step hidden" id="manualStep2">
+      <div class="modal-tabs">
+        <button class="tab active handel"><img src="./assets/images/profile/rightform.svg"> <label> القطعة بيانات</label></button>
+        <button class="tab active">بيانات العرض</button>
+      </div>
+
+      <!-- نفس محتوى step2 من المودال الأول -->
+      <div class="offer-form">
+        <div class="form-group">
+          <label>السعر الخاص بالعرض</label>
+          <input type="text" placeholder="حدد السعر" />
+        </div>
+        <div class="form-group">
+          <label>الكمية</label>
+          <input type="text" placeholder="اكتب الكمية" />
+        </div>
+        <div class="form-group">
+          <label>الحد الأدنى للطلب</label>
+          <input type="text" placeholder="حدد الحد الأدنى للطلب" />
+        </div>
+<!-- نوع العرض -->
+<div id="dropdownContainer2" class="form-group custom-dropdown-type">
+  <label>نوع العرض</label>
+  <div class="dropdown-container" id="offerTypeDropdown2">
+    <div class="dropdown-selected-type" id="offerTypeSelected2">حدد نوع العرض</div>
+    <ul class="dropdown-list hidden" id="offerTypeList2">
+      <li data-value="continuous">مستمر حتى نفاذ الكمية</li>
+      <li data-value="limited">لفترة محددة</li>
+    </ul>
+  </div>
+</div>
+
+        <div class="form-group">
+          <label>تاريخ البداية</label>
+          <input type="date" />
+        </div>
+        <div class="form-group">
+          <label>تاريخ النهاية</label>
+          <input type="date" />
+        </div>
+              <div class="form-group form-toggle">
+  <label class="toggle-label">قابل للتمديد</label>
+  <label class="switch">
+    <input type="checkbox" />
+    <span class="slider round"></span>
+  </label>
+</div>
+      </div>
+
+      <!-- <div class="modal-footer-step2">
+        <button id="manualPublishOffer" type="submit" class="green-submit">
+          <img src="./assets/images/profile/right.svg" alt="img" />
+          <label>نشر العرض</label>
+        </button>
+        <div>
+          <button id="manualBackToStep1" class="prev-btn">
+            <img src="./assets/images/profile/pre.svg" /><label>السابق</label>
+          </button>
+        </div>
+      </div> -->
+      <!--  -->
+        <div class="modal-footer-step2"> 
+          <button id="manualPublishOffer" type="submit" class="green-submit">
+                      <img src="./assets/images/profile/right.svg" alt="img" />
+                      <label> نشر العرض </label>
+                    </button>
+                       <div>
+           <button id="manualBackToStep1" class="prev-btn" > <img src="./assets/images/profile/pre.svg"> <label>السابق</label> </button>
+           <button class="next-btn"  disabled><label> التالى</label> <img src="./assets/images/profile/next.svg"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- الخطوة الثالثة -->
+    <div class="modal-step hidden" id="manualSuccessStep">
+      <div class="success-content">
+        <img src="./assets/images/profile/success-icon2.svg" alt="success" class="success-icon" />
+        <h3>المنتج قيد المراجعه</h3>
+        <p>
+في مده اقصاها ٢٤ ساعه سوف يتم اضافه المنتج 
+<br> في حال الموافقه عليه
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- القسم الأول: المنتجات اللي عليها عروض -->
+  <section id="offer-products" class="products-section">
+     <div class="offer-products-header">
+                        <img
+                          src="./assets/images/profile/prooffer.svg"
+                          alt="img"
+                          id="delegateModalIcon"
+                        />
+                        <label id="delegateModalTitle">العروض الحالية </label>
+                      </div>
+    <div class="products-container" id="offer-products-container"></div>
+  </section>
+
+  <!-- القسم الثاني: المنتجات بدون عروض -->
+  <section id="non-offer-products" class="products-section">
+        <div class="offer-products-header">
+                        <img
+                          src="./assets/images/profile/light.svg"
+                          alt="img"
+                          id="delegateModalIcon"
+                        />
+                        <label id="delegateModalTitle">منتجات بدون عروض  </label>
+                      </div>
+    <div class="products-container" id="non-offer-products-container"></div>
+  </section>
+
+</div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer (Dynamic Rendering) -->
+      <section id="footer-section"></section>
+    </section>
+
+    <!-- External Scripts -->
+    <script src="./assets/js/nav.js"></script>
+    <script src="./assets/js/profile.js"></script>
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/offer.js"></script>
+    <script type="module" src="./assets/js/offerProduct.js"></script>
+    <script type="module" src="./assets/js/index.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+

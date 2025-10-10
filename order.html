@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <title>قطعنا</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section id="order-section">
+      <!-- Nav Dynamic REndering ----->
+      <div id="shared-nav"></div>
+
+      <div class="order-content">
+        <div class="first-part">
+          <div class="title">
+            <h3>ملخص الطلب</h3>
+            <span>2 Items</span>
+          </div>
+          <div class="order-products-container">
+            <div class="order-product">
+              <div class="first-part">
+                <img
+                  src="./assets/images/products/product.png"
+                  alt="productImg"
+                />
+                <div>
+                  <div>
+                    <label>كمبروسر مكيف</label>
+                    <span>88320-06100</span>
+                  </div>
+                  <span>اصلي</span>
+                </div>
+              </div>
+              <div class="middle-part">
+                <span>4.2</span>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="last-part">
+                <div>
+                  <i class="fa-solid fa-plus"></i>
+                  <input type="number" aria-label="number" value="2" />
+                  <i class="fa-solid fa-trash-can"></i>
+                </div>
+                <div>
+                  <span>234</span>
+                  <img
+                    src="./assets/images/products/currency.svg"
+                    alt="currency"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="order-product">
+              <div class="first-part">
+                <img
+                  src="./assets/images/products/product.png"
+                  alt="productImg"
+                />
+                <div>
+                  <div>
+                    <label>كمبروسر مكيف</label>
+                    <span>88320-06100</span>
+                  </div>
+                  <span>اصلي</span>
+                </div>
+              </div>
+              <div class="middle-part">
+                <span>4.2</span>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="last-part">
+                <div>
+                  <i class="fa-solid fa-plus"></i>
+                  <input type="number" aria-label="number" value="2" />
+                  <i class="fa-solid fa-trash-can"></i>
+                </div>
+                <div>
+                  <span>234</span>
+                  <img
+                    src="./assets/images/products/currency.svg"
+                    alt="currency"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cost-container">
+            <div class="details-and-actions">
+              <div class="prices-container">
+                <div class="tax-note">الاسعار غير شامل الضريبة</div>
+                <div class="code-action">
+                  <div>
+                    <img src="./assets/images/cart/cart.svg" alt="cart" />
+                    <span>ادخل الكود</span>
+                  </div>
+                  <label class="hover">تطبيق</label>
+                </div>
+                <div class="detailed-price">
+                  <div>
+                    <label>إجمالي المنتجات</label>
+                    <div>
+                      <span>320</span>
+                      <img
+                        src="./assets/images/products/currency grey.svg"
+                        alt="currency"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label>الشحن</label>
+                    <div>
+                      <span>320</span>
+                      <img
+                        src="./assets/images/products/currency grey.svg"
+                        alt="currency"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label>الخصم (إن وُجد)</label>
+                    <div>
+                      <span>320</span>
+                      <img
+                        src="./assets/images/products/currency grey.svg"
+                        alt="currency"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cart-view-total-price">
+                  <label>الإجمالي النهائي</label>
+                  <div>
+                    <span>320</span>
+                    <img
+                      src="./assets/images/products/currency.svg"
+                      alt="currency"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="second-part">
+          <div class="payment-container">
+            <h3>حدد طريقة الدفع</h3>
+            <div class="payment-method">
+              <div class="payment-item">
+                <img
+                  src="./assets/images/payment method/visa.png"
+                  alt="payment"
+                />
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div class="payment-item">
+                <img
+                  src="./assets/images/payment method/mastercard.png"
+                  alt="payment"
+                />
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div class="payment-item">
+                <img
+                  src="./assets/images/payment method/amex.png"
+                  alt="payment"
+                />
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div class="payment-item">
+                <img
+                  src="./assets/images/payment method/unknown.png"
+                  alt="payment"
+                />
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div class="payment-item">
+                <img
+                  src="./assets/images/payment method/applepay.png"
+                  alt="payment"
+                />
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div class="payment-item">
+                <img
+                  src="./assets/images/payment method/mada.png"
+                  alt="payment"
+                />
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div class="payment-item">
+                <img
+                  src="./assets/images/payment method/stc.png"
+                  alt="payment"
+                />
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div class="payment-item">
+                <img
+                  src="./assets/images/payment method/tabby.png"
+                  alt="payment"
+                />
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="personal-info">
+            <div class="fill-data">
+              <label>رقم البطاقة</label>
+              <div class="id-input">
+                <input
+                  placeholder="مثال: 04465-0E010"
+                  type="number"
+                  name="ID"
+                  id="ID"
+                  aria-label="ID"
+                />
+                <img
+                  class="visaImg"
+                  src="./assets/images/payment method/visasmall.png"
+                  alt="visaImg"
+                />
+              </div>
+            </div>
+
+            <div>
+              <div class="fill-data">
+                <label>رقم الجوال</label>
+                <div>
+                  <input
+                    placeholder="مثال: 04465-0E010"
+                    type="number"
+                    name="ID"
+                    id="ID"
+                    aria-label="ID"
+                  />
+                </div>
+              </div>
+              <div class="fill-data">
+                <label>رقم الجوال</label>
+                <div>
+                  <input
+                    placeholder="مثال: 04465-0E010"
+                    type="number"
+                    name="ID"
+                    id="ID"
+                    aria-label="ID"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-info">
+            <div class="fill-data">
+              <label>رقم البطاقة</label>
+              <div class="id-input">
+                <input
+                  placeholder="ادخل رقم البطاقة"
+                  type="number"
+                  name="ID"
+                  id="ID"
+                  aria-label="ID"
+                />
+                <img
+                  class="visaImg"
+                  src="./assets/images/payment method/visasmall.png"
+                  alt="visaImg"
+                />
+              </div>
+            </div>
+            <div>
+              <div class="fill-data">
+                <label>تاريخ الانتهاء</label>
+                <div>
+                  <input
+                    placeholder="MM / YY"
+                    type="number"
+                    name="ID"
+                    id="ID"
+                    aria-label="ID"
+                  />
+                </div>
+              </div>
+              <div class="fill-data">
+                <label>رمز التحقق (CVV)</label>
+                <div>
+                  <input
+                    placeholder="مثال: 123"
+                    type="number"
+                    name="ID"
+                    id="ID"
+                    aria-label="ID"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="address-mob">
+            <h3>معلومات التوصيل / العنوان</h3>
+            <div>
+              <div class="fill-data">
+                <label>رقم الجوال</label>
+                <div>
+                  <input
+                    placeholder="مثال: 04465-0E010"
+                    type="number"
+                    name="ID"
+                    id="ID"
+                    aria-label="ID"
+                  />
+                </div>
+              </div>
+              <div class="fill-data">
+                <label>رقم الجوال</label>
+                <div>
+                  <input
+                    placeholder="مثال: 04465-0E010"
+                    type="number"
+                    name="ID"
+                    id="ID"
+                    aria-label="ID"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="fill-data">
+                <label>المدينة</label>
+                <div>
+                  <input
+                    placeholder="حدد المدينة"
+                    type="text"
+                    name="ID"
+                    id="ID"
+                    aria-label="ID"
+                  />
+                </div>
+              </div>
+              <div class="fill-data">
+                <label>الحي / الشارع</label>
+                <div>
+                  <input
+                    placeholder="حدد الشارع أو المنطقة"
+                    type="text"
+                    name="ID"
+                    id="ID"
+                    aria-label="ID"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="fill-data">
+              <label>رقم المبنى (اختياري)</label>
+              <div class="id-input">
+                <input
+                  placeholder="مثال: Toyota / TRW / غيره"
+                  type="text"
+                  name="ID"
+                  id="ID"
+                  aria-label="ID"
+                />
+                <img
+                  class="visaImg"
+                  src="./assets/images/payment method/visasmall.png"
+                  alt="visaImg"
+                />
+              </div>
+            </div>
+
+            <div class="mob-action-pay">
+              <button>ادفع الان 320 ريال</button>
+            </div>
+          </div>
+
+          <div class="address-tablet">
+            <h3>معلومات التوصيل / العنوان</h3>
+
+            <div class="addresses-container">
+              <div class="address-holder">
+                <div>
+                  <span>تلقائي</span>
+                  <div>
+                    <i class="fa-solid fa-pen"></i>
+                    <span>تعديل</span>
+                  </div>
+                </div>
+                <div>
+                  <label>الاسم:</label>
+                  <p>Ahmed Magdy</p>
+                </div>
+                <div>
+                  <label>العنوان:</label>
+                  <p class="truncate">
+                    3232, 8103 - الهاشمي - حي الملك سلمان - الرياض - امارة منطقة
+                    الرياض - منطقة الرياض - 12443, الرياض, المملكة العربية
+                    السعودية
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="add-address hover">
+              <i class="fa-solid fa-square-plus"></i>
+              <span>اضف عنوان جديد</span>
+            </div>
+
+            <div class="policy-check">
+              <input type="checkbox" aria-label="check" />
+              بإتمام الدفع، فإنك توافق على
+              <span>سياسة الاسترجاع والاستبدال </span>.
+            </div>
+
+            <div class="tablet-confirm">
+              <button>ادفع الان 320 ريال</button>
+            </div>
+          </div>
+
+          <div class="trust">آمن 100% – معلوماتك محمية</div>
+
+          <i class="fa-solid fa-xmark close hover"></i>
+        </div>
+
+        <div class="tablet-form-address">
+          <h4>اضافة عنوان جديد</h4>
+          <div class="fill-data">
+            <label>العنوان الوطني</label>
+            <div class="id-input">
+              <input
+                placeholder="العنوان الوطني"
+                type="text"
+                name="ID"
+                id="ID"
+                aria-label="ID"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div class="fill-data">
+              <label>الحي / الشارع</label>
+              <div>
+                <input
+                  placeholder="الحي / الشارع"
+                  type="text"
+                  name="ID"
+                  id="ID"
+                  aria-label="ID"
+                />
+              </div>
+            </div>
+            <div class="fill-data">
+              <label>اسم / رقم المبني</label>
+              <div>
+                <input
+                  placeholder="اسم / رقم المبني"
+                  type="text"
+                  name="ID"
+                  id="ID"
+                  aria-label="ID"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="fill-data">
+            <label>اقرب معلم لك</label>
+            <div class="id-input">
+              <input
+                placeholder="رقم المبنى"
+                type="text"
+                name="ID"
+                id="ID"
+                aria-label="ID"
+              />
+            </div>
+          </div>
+
+          <div class="address-btn">
+            <button>اضف العنوان</button>
+          </div>
+
+          <i class="fa-solid fa-xmark close-tablet-add-address hover"></i>
+        </div>
+      </div>
+
+      <!--- Footer Dynamic Rendering -->
+      <section id="footer-section"></section>
+    </section>
+
+    <script src="./assets/js/nav.js"></script>
+    <script src="./assets/js/order.js"></script>
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/offer.js"></script>
+    <script type="module" src="./assets/js/index.js"></script>
+  </body>
+</html>

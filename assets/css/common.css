@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "Montserrat Arabic Regualr";
+  src: url("../fonts/Montserrat-Arabic\ Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat Arabic Semi";
+  src: url("../fonts/Montserrat-Arabic\ SemiBold.ttf") format("truetype");
+}
+
+:root {
+  --text-title-weight: 600;
+  --text-content-weight: lighter !important;
+
+  --form-login-action-size: 12px;
+  --form-reg-action-size: 12px;
+
+  --font-regular: "Montserrat Arabic Regualr";
+  --font-semibold: "Montserrat Arabic Semi";
+
+  --text-content-line-height: 170%;
+
+  --link-effect-text-size: 12px;
+
+  --form-label-color: #000000;
+  --form-input-bg-color: #f5f5f5;
+  --form-btn-bg-color: #1E3A8A;
+  --form-btn-text-color: #ffffff;
+  --form-inp-color: #f5f5f5;
+  --form-hr-color: #d1d1d1;
+  --link-effect-border-color: rgb(226, 226, 226);
+  --link-effect-bg-color: rgba(245, 245, 245, 0.9);
+  --svg-mob-color: #306dfe;
+  --PIN-box-color: #eaf0ff;
+  --error-color: #b10d30;
+  --submit-btn-color: #cecece;
+  --submit-btn-text-color: #141414;
+  --language-color: #ebebeb;
+  --text-title-color: #141414;
+  --text-content-color: #8c8c8c;
+  --web-bg-color: white;
+  --error-bg-color: rgba(177, 13, 48, 0.1);
+}
+
+/* =========================
+   BASE STYLES
+========================= */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+html,
+body {
+  height: 100%;
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  /* completely hide and disable scrolling */
+}
+
+html {
+  font-family: var(--font-regular);
+}
+
+/* Firefox */
+body {
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+}
+
+input:focus {
+  outline: none;
+}
+
+.hover {
+  cursor: pointer;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+

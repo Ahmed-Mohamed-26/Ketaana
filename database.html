@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <title>قطعنا</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section id="database-section">
+      <!-- Nav Dynamic REndering ----->
+      <div id="shared-nav"></div>
+      <div class="content-container">
+        <div class="intro">
+          <div class="shadow-effect"></div>
+          <div>
+            <span>متجر البيانات</span>
+            <div>
+              <h3>قاعدة بيانات شاملة لقطع الغيار</h3>
+              <p>
+                استعرض الآلاف من قطع الغيار المصنّفة حسب الشركة المصنعة حمل
+                البيانات بصيغة Excel، أو ابحث عن قطعة معينة بكل سهولة.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="search-container">
+          <div>
+            <h3>ابحث عن قطع الغيار حسب اسم الشركة المصنعة</h3>
+            <div>
+              <div>
+                <label>اسم او رقم القطعة</label>
+                <input
+                  type="text"
+                  name="search"
+                  id="search"
+                  aria-label="search"
+                  placeholder="الاسم او الرقم"
+                />
+              </div>
+              <button>ابحث</button>
+            </div>
+          </div>
+        </div>
+        <div class="table">
+          <button class="hover export-database">
+            <span>تحميل البيانات كملف Excel</span
+            ><i class="fa-solid fa-arrow-down"></i>
+          </button>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    <div class="th-flex">
+                      <span>اسم القطعة</span>
+                      <i class="fa-solid fa-arrow-down-short-wide"></i>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="th-flex">
+                      <span>رقم القطعة</span>
+                      <i class="fa-solid fa-arrow-down-short-wide"></i>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="th-flex">
+                      <span>أرقام بديلة</span>
+                      <i class="fa-solid fa-arrow-down-short-wide"></i>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="th-flex">
+                      <span>نوع البراند</span>
+                      <i class="fa-solid fa-arrow-down-short-wide"></i>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="th-flex">
+                      <span>الفئة</span>
+                      <i class="fa-solid fa-arrow-down-short-wide"></i>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="th-flex">
+                      <span>بلد الصنع</span>
+                      <i class="fa-solid fa-arrow-down-short-wide"></i>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="th-flex">
+                      <span>شركة الصنع</span>
+                      <i class="fa-solid fa-arrow-down-short-wide"></i>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>فلتر زيت</td>
+                  <td>90915-YZZF2</td>
+                  <td>90915-YZZF2</td>
+                  <td>Toyota</td>
+                  <td>أصلي</td>
+                  <td>-----</td>
+                  <td>-----</td>
+                </tr>
+                <tr>
+                  <td>فلتر زيت</td>
+                  <td>90915-YZZF2</td>
+                  <td>90915-YZZF2</td>
+                  <td>Toyota</td>
+                  <td>تجاري</td>
+                  <td>اليابان</td>
+                  <td>ياباني</td>
+                </tr>
+                <tr>
+                  <td>فلتر زيت</td>
+                  <td>90915-YZZF2</td>
+                  <td>90915-YZZF2</td>
+                  <td>Toyota</td>
+                  <td>تجاري</td>
+                  <td>اليابان</td>
+                  <td>ياباني</td>
+                </tr>
+                <!-- يمكنك تكرار المزيد من الصفوف مثل المثال -->
+              </tbody>
+            </table>
+          </div>
+          <!--- Pagination Dynamic Rendering ----->
+          <div id="pagination-section">
+            <ul class="pagination-container">
+              <i class="fa-solid fa-chevron-right hover"></i>
+              <li class="hover active-page">1</li>
+              <li class="hover">2</li>
+              <li class="hover">3</li>
+              <li class="hover">...</li>
+              <li class="hover">4</li>
+              <i class="fa-solid fa-chevron-left"></i>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!--- Footer Dynamic Rendering -->
+      <section id="footer-section"></section>
+    </section>
+    <script src="./assets/js/nav.js"></script>
+    <script src="./assets/js/database.js"></script>
+    <script src="./assets/js/search.js"></script>
+    <script src="./assets/js/filteration.js"></script>
+    <script src="./assets/js/common.js"></script>
+    <script type="module" src="./assets/js/index.js"></script>
+  </body>
+</html>

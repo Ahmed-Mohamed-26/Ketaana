@@ -1,0 +1,214 @@
+/* ---------- VERIFICATION PAGE PIN STYLES ---------- */
+#verfication #send-btn {
+  background-color: var(--submit-btn-color);
+  color: black;
+}
+#verfication .form-pin-input {
+  width: 100%;
+  display: none; /* hidden at first */
+  width: 100%;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+#verfication .shared-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#verfication .shared-container-two {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* PIN container layout */
+#verfication .pin-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+#verfication .pin-group {
+  display: flex;
+  gap: 5px;
+  justify-content: space-evenly;
+  width: fit-content;
+}
+
+/* PIN input boxes */
+#verfication .pin-group .pin-input {
+  font-size: 20px;
+  text-align: center;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  background-color: var(--form-inp-color);
+  opacity: 0; /* hidden initially */
+  transform: translateY(30px); /* shifted down */
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Filled box effect */
+#verfication .pin-input.filled {
+  background-color: var(--PIN-box-color);
+  border-color: transparent;
+  transform: scale(1.05); /* small pop */
+}
+
+/* Reset scale if not filled */
+#verfication .pin-input:not(.filled) {
+  transform: scale(1);
+}
+
+/* Separator between PIN groups */
+#verfication .separator {
+  font-size: 15px;
+  font-weight: bold;
+  opacity: 0;
+}
+
+/* PIN input animation */
+#verfication .pin-input.show {
+  animation: slideUp 0.4s ease forwards;
+}
+
+#verfication .separator.show {
+  animation: slideUp 0.4s ease forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Timer */
+#verfication #resend-timer {
+  font-size: 12px;
+  color: #cecece;
+  font-weight: lighter;
+}
+#verfication .timer-text .timer-number {
+  color: var(--svg-mob-color);
+  font-weight: bold;
+}
+
+/* Error message */
+#verfication .pin-error {
+  display: none;
+  font-size: 13px;
+  color: red;
+  background-color: #ffe6e6;
+  border-radius: 8px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.3s ease;
+}
+#verfication .pin-error.show {
+  display: block;
+  max-height: 40px; /* enough for one line */
+  opacity: 1;
+  padding: 8px 12px;
+}
+
+/* Optional: lock body scrolling if needed */
+#verfication .no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* CTA link/button style (if used on this page) */
+#verfication #link-action-effect {
+  border: 1px solid var(--link-effect-border-color);
+  padding: 12px 20px;
+  font-size: var(--link-effect-text-size);
+  border-radius: 50px;
+  background-color: var(--link-effect-bg-color);
+}
+
+.loader {
+  display: none;
+  position: relative;
+  width: 20px;
+  height: 15px;
+}
+
+.loader span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px; /* thinner so it looks balanced */
+  height: 5px; /* smaller bar height */
+  background: white;
+  border-radius: 2px;
+  transform-origin: center 9px; /* pivot matches loader radius */
+  animation: sweep 2s linear infinite;
+  opacity: 1;
+}
+
+/* Sweep animation */
+@keyframes sweep {
+  0% {
+    background: white;
+    opacity: 0.1;
+  }
+  30% {
+    background: black;
+    opacity: 1;
+  }
+  70% {
+    background: white;
+    opacity: 0.1;
+  }
+  100% {
+    background: white;
+    opacity: 0.1;
+  }
+}
+
+/* Position 8 bars equally around the circle */
+.loader span:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: 0s;
+}
+.loader span:nth-child(2) {
+  transform: rotate(45deg);
+  animation-delay: 0.25s;
+}
+.loader span:nth-child(3) {
+  transform: rotate(90deg);
+  animation-delay: 0.5s;
+}
+.loader span:nth-child(4) {
+  transform: rotate(135deg);
+  animation-delay: 0.75s;
+}
+.loader span:nth-child(5) {
+  transform: rotate(180deg);
+  animation-delay: 1s;
+}
+.loader span:nth-child(6) {
+  transform: rotate(225deg);
+  animation-delay: 1.25s;
+}
+.loader span:nth-child(7) {
+  transform: rotate(270deg);
+  animation-delay: 1.5s;
+}
+.loader span:nth-child(8) {
+  transform: rotate(315deg);
+  animation-delay: 1.75s;
+}
