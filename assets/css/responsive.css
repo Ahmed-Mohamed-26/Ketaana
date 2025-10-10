@@ -73,7 +73,10 @@
   }
 
   #nav-container > div > .account-action-btn {
-    background: linear-gradient(to left, #ee3338, #e62c36);
+    background: linear-gradient(   to left,
+      rgba(30, 58, 138, 1),
+      rgb(142, 107, 255)
+    );
     padding: 5px 10px;
     height: 28px;
     border-radius: 8px;
