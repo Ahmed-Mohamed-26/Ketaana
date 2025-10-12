@@ -1,13 +1,13 @@
 // filteration.js - معدل للـ form نفسه
 document.addEventListener("DOMContentLoaded", () => {
-  // ✅ حدد العناصر في الـ #search-form نفسه
+  
   const searchForm = document.getElementById("search-form");
-  const searchFormInputs = searchForm.querySelectorAll(".search-form-input");  // الخمس inputs دلوقتي في نفس المكان
-  const searchFormAction = searchForm.querySelector(".search-form-action");   // الـ action في نفس المكان
-  const filterBtnWrapper = searchFormAction.querySelector("div i.fa-filter").parentElement;  // الـ filter الجديد هنا
-  const filterHr = filterBtnWrapper.previousElementSibling;  // الـ <hr> قبله
+  const searchFormInputs = searchForm.querySelectorAll(".search-form-input");  
+  const searchFormAction = searchForm.querySelector(".search-form-action");   
+  const filterBtnWrapper = searchFormAction.querySelector("div i.fa-filter").parentElement;  
+  const filterHr = filterBtnWrapper.previousElementSibling;  
 
-  // ✅ عناصر الحقول الجديدة
+
   const categoryInput = document.getElementById("category");
   const countryInputContainer = document.getElementById("country-input");
   const companyInputContainer = document.getElementById("company-input");
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const countryUl = countryInputContainer ? countryInputContainer.querySelector("ul") : null;
   const companyUl = companyInputContainer ? companyInputContainer.querySelector("ul") : null;
 
-  // ✅ عناصر الـ dropdowns للتصميم المتطابق (براند، فئة، بلد، شركة)
+ 
   const brandContainer = searchForm.querySelector('input[name="brand"]').closest(".input-value");
   const categoryContainer = searchForm.querySelector('input[name="category"]').closest(".input-value");
   const countryContainer = countryInputContainer ? countryInputContainer.querySelector(".input-value") : null;
@@ -24,28 +24,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let filterClicked = false;
 
-  // ✅ دالة مساعدة لزيادة عرض الـ inputValue للـ dropdowns المحددة (متطابق مع شركة الصنع)
+  
   function applyUniformWidth(inputContainers) {
     inputContainers.forEach((container) => {
       if (container) {
         // container.style.width = "100%"; 
         container.style.width = window.innerWidth < 768 ? "90%" : "100%";
 
-        container.style.justifyContent = "space-between";  // السهم في مكانه القديم
+        container.style.justifyContent = "space-between"; 
         const input = container.querySelector("input");
         if (input) {
-          input.style.flex = "1";  // الـ input يملأ المساحة
-          input.style.width = "calc(100% - 30px)";  // مسافة للسهم بدون تغيير موقعه
+          input.style.flex = "1";  
+          input.style.width = "calc(100% - 30px)";  
         }
       }
     });
   }
 
-  // ✅ تطبيق العرض المتطابق في البداية
+  
   const dropdownContainers = [brandContainer, categoryContainer, countryContainer, companyContainer];
   applyUniformWidth(dropdownContainers);
 
-  // ✅ Default state: خفي الأولى والتانية والتالتة والرابعة، اظهر الخامسة (اسم القطعة)
+ 
   searchFormInputs.forEach((el, i) => {
     if (i < 4) {
       el.style.display = "none";
@@ -65,30 +65,111 @@ document.addEventListener("DOMContentLoaded", () => {
 
   searchFormAction.style.display = "flex";
 
-  // ✅ إضافة event للـ dropdowns الجديدة (فتح/إغلاق ul عند الضغط على chevron)
-  if (countryChevron && countryUl) {
-    countryChevron.addEventListener("click", (e) => {
+ 
+
+function toggleDropdownInstant(ulElement, forceOpen = false) {
+  if (!ulElement) return;
+
+  // لو جاي أمر "افتح غصبًا" افتحها فقط
+  if (forceOpen) {
+    ulElement.style.display = "block";
+    ulElement.style.opacity = "1";
+    return;
+  }
+
+  // toggle عادي
+  if (ulElement.style.display === "none" || ulElement.style.display === "") {
+    ulElement.style.display = "block";
+    ulElement.style.opacity = "1";
+  } else {
+    ulElement.style.display = "none";
+  }
+}
+
+
+function closeAllDropdowns() {
+  if (countryUl) countryUl.style.display = "none";
+  if (companyUl) companyUl.style.display = "none";
+}
+
+
+if (countryChevron && countryUl) {
+  const countryInputField = document.getElementById("country");
+
+ 
+  countryChevron.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleDropdownInstant(countryUl);
+  });
+
+  // عند الضغط على الـ input نفسه
+  if (countryInputField) {
+    countryInputField.addEventListener("mousedown", (e) => {
+      e.preventDefault();
       e.stopPropagation();
-      if (countryUl.style.display === "none" || countryUl.style.display === "") {
-        countryUl.style.display = "block";  // أو "flex" حسب الـ CSS
-      } else {
-        countryUl.style.display = "none";
-      }
+      // افتح القايمة فقط لو كانت مقفولة
+      if (countryUl.style.display === "none" || countryUl.style.display === "")
+        toggleDropdownInstant(countryUl, true);
     });
   }
 
-  if (companyChevron && companyUl) {
-    companyChevron.addEventListener("click", (e) => {
+  // عند اختيار عنصر من القايمة
+  countryUl.querySelectorAll("li").forEach((li) => {
+    li.addEventListener("mousedown", (e) => {
+      e.preventDefault();
       e.stopPropagation();
-      if (companyUl.style.display === "none" || companyUl.style.display === "") {
-        companyUl.style.display = "block";  // أو "flex" حسب الـ CSS
-      } else {
-        companyUl.style.display = "none";
-      }
+      countryInputField.value = li.textContent.trim();
+      countryUl.style.display = "none"; 
+    });
+  });
+}
+
+//  شركة الصنع
+if (companyChevron && companyUl) {
+  const companyInputField = document.getElementById("company");
+
+  // عند الضغط على الأيقونة
+  companyChevron.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleDropdownInstant(companyUl);
+  });
+
+  // عند الضغط على الـ input نفسه
+  if (companyInputField) {
+    companyInputField.addEventListener("mousedown", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      // افتح القايمة فقط لو كانت مقفولة
+      if (companyUl.style.display === "none" || companyUl.style.display === "")
+        toggleDropdownInstant(companyUl, true);
     });
   }
 
-  // ✅ Event للـ filter click (في الـ action الرئيسي)
+  // عند اختيار عنصر من القايمة
+  companyUl.querySelectorAll("li").forEach((li) => {
+    li.addEventListener("mousedown", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      companyInputField.value = li.textContent.trim();
+      companyUl.style.display = "none"; // اقفل القايمة بعد الاختيار
+    });
+  });
+}
+
+document.addEventListener("mousedown", (e) => {
+  const isInsideDropdown =
+    e.target.closest("#country-input") || e.target.closest("#company-input");
+
+  if (!isInsideDropdown) {
+    closeAllDropdowns();
+  }
+});
+
+
+
+  
   if (filterBtnWrapper) {
     filterBtnWrapper.addEventListener("click", () => {
       filterClicked = true;
@@ -107,21 +188,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      // ✅ إعادة تطبيق العرض المتطابق بعد الإظهار
+    
       applyUniformWidth(dropdownContainers);
 
-      // خفي الـ filter والـ hr
+    
       filterBtnWrapper.style.display = "none";
       if (filterHr && filterHr.tagName === "HR") {
         filterHr.style.display = "none";
       }
 
-      // ✅ استدعاء الـ responsive فوراً بعد الضغط عشان يطبق الـ column في mobile
       handleResponsiveLayout();
     });
   }
 
-  // ✅ الـ logic الجديد: لقفل/فتح بلد الصنع وشركة الصنع بناءً على الفئة
+  
   if (categoryInput) {
     const categoryUl = categoryInput.closest(".select-container").querySelector("ul");
     if (categoryUl) {
@@ -130,16 +210,15 @@ document.addEventListener("DOMContentLoaded", () => {
           const selectedValue = e.target.textContent.trim();
           categoryInput.value = selectedValue;
 
-          // ✅ التحقق والقفل/الفتح
           if (selectedValue === "أصلی") {
             // قفل الحقول الجديدة
             const countryInput = document.getElementById("country");
             const companyInput = document.getElementById("company");
             if (countryInput) {
               countryInput.readOnly = true;
-              countryInput.value = "";  // مسح القيمة
-              if (countryChevron) countryChevron.style.display = "none";  // إخفاء الـ chevron
-              if (countryUl) countryUl.style.display = "none";  // إغلاق الـ ul
+              countryInput.value = "";  
+              if (countryChevron) countryChevron.style.display = "none";  
+              if (countryUl) countryUl.style.display = "none";  
             }
             if (companyInput) {
               companyInput.readOnly = true;
@@ -153,8 +232,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const companyInput = document.getElementById("company");
             if (countryInput) {
               countryInput.readOnly = false;
-              if (countryChevron) countryChevron.style.display = "block";  // إظهار الـ chevron
-              if (countryUl) countryUl.style.display = "none";  // مغلقة افتراضياً، بس تقدر تفتحها
+              if (countryChevron) countryChevron.style.display = "block";  
+              if (countryUl) countryUl.style.display = "none";  
             }
             if (companyInput) {
               companyInput.readOnly = false;
@@ -163,14 +242,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           }
 
-          // ✅ إعادة تطبيق العرض بعد التغيير
+         
           applyUniformWidth(dropdownContainers);
         }
       });
     }
   }
 
-  // ✅ Responsive layout handler (معدل للـ mobile stacking)
+ 
   function handleResponsiveLayout() {
     if (window.innerWidth >= 768) {
       // Desktop/Tablet
@@ -184,45 +263,44 @@ document.addEventListener("DOMContentLoaded", () => {
       searchFormInputs.forEach((el) => {
         const inputValue = el.querySelector(".input-value");
         if (inputValue) {
-          inputValue.style.width = filterClicked ? "100%" : "90%";  // عرض أكبر في desktop بعد الفلتر
+          inputValue.style.width = filterClicked ? "100%" : "90%";  
         }
       });
 
-      // ✅ Tablet+ → set hr height to 30px
       searchFormAction.querySelectorAll("hr").forEach((hr) => {
         hr.style.height = "30px";
       });
     } else {
       // Mobile: stacked vertically فوق بعض
       searchForm.style.display = "flex";
-      searchForm.style.flexDirection = "column";  // ✅ عمودي للـ inputs فوق بعض
-      searchForm.style.alignItems = "stretch";   // ✅ تملأ العرض كامل
-      searchForm.style.gap = "15px";             // ✅ مسافات بين الحقول
+      searchForm.style.flexDirection = "column";  
+      searchForm.style.alignItems = "stretch";   
+      searchForm.style.gap = "15px";            
 
-      searchFormAction.style.width = "100%";     // ✅ الـ action كامل العرض
+      searchFormAction.style.width = "100%";     
 
       searchFormInputs.forEach((el) => {
-        el.style.display = filterClicked ? "flex" : el.style.display;  // ✅ تأكيد الإظهار بعد الفلتر
-        el.style.flexDirection = "column";       // ✅ كل input عمودي داخل نفسه
+        el.style.display = filterClicked ? "flex" : el.style.display;  
+        el.style.flexDirection = "column";      
         el.style.alignItems = "stretch";
 
         const inputValue = el.querySelector(".input-value");
         if (inputValue) {
-          inputValue.style.width = "90%";       // ✅ كامل العرض في mobile
+          inputValue.style.width = "90%";      
           inputValue.style.flexDirection = "row";
-          inputValue.style.justifyContent = "space-between";  // السهم في مكانه القديم
+          inputValue.style.justifyContent = "space-between";  
           inputValue.style.alignItems = "center";
           inputValue.style.gap = "10px";
         }
       });
 
-      // ✅ Mobile → reset hr height
+      
       searchFormAction.querySelectorAll("hr").forEach((hr) => {
         hr.style.height = "";
       });
     }
 
-    // ✅ ضبط الـ selectContainers للـ stacking في mobile
+
     const selectContainers = searchForm.querySelectorAll(".select-container");
     selectContainers.forEach((sc) => {
       sc.style.display = "flex";
@@ -233,14 +311,14 @@ document.addEventListener("DOMContentLoaded", () => {
         sc.style.justifyContent = "space-evenly";
         sc.style.alignItems = "center";
       } else {
-        sc.style.flexDirection = "column";         // ✅ عمودي في mobile
+        sc.style.flexDirection = "column";         
         sc.style.alignItems = "flex-start";
         sc.style.justifyContent = "flex-start";
-        sc.style.width = "100%";                   // ✅ كامل العرض
+        sc.style.width = "100%";                   
       }
     });
 
-    // ✅ إعادة تطبيق العرض المتطابق في الـ responsive
+    
     applyUniformWidth(dropdownContainers);
   }
   handleResponsiveLayout();

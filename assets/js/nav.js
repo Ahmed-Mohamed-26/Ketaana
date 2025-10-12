@@ -188,7 +188,6 @@ function initNavEvents() {
   /* --------- Login Status Check + Tablet/Mobile nav setup --------- */
   function checkLoginStatus() {
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-
     const navContainer = sharedNav.querySelector("#nav-container");
     const accountSummary = sharedNav.querySelector("#account-summary");
     const logoIndex = sharedNav.querySelector("#logo-index");
@@ -293,6 +292,58 @@ function initNavEvents() {
         hideMobileNav();
       });
     });
+    //  إظهار أو إخفاء العناصر حسب حالة تسجيل الدخول 
+   const alwaysVisiblePages = ["الرئيسية", "من نحن"];
+  // التابلت
+  const tabletItems = sharedNav.querySelectorAll(".tablet-nav-el ul li");
+  const tabletHrs = sharedNav.querySelectorAll(".tablet-nav-el ul hr");
+
+  tabletItems.forEach((el) => {
+    const text = el.textContent.trim();
+    if (alwaysVisiblePages.includes(text)) {
+      el.style.display = "";
+    } else {
+      el.style.display = isLoggedIn ? "" : "none";
+    }
+  });
+
+  tabletHrs.forEach((hr) => {
+    const nextEl = hr.nextElementSibling;
+    if (nextEl && nextEl.tagName === "LI") {
+      const text = nextEl.textContent.trim();
+      if (alwaysVisiblePages.includes(text)) {
+        hr.style.display = "";
+      } else {
+        hr.style.display = isLoggedIn ? "" : "none";
+      }
+    }
+  });
+
+  // الموبايل
+  const mobItems = mobNavContainer?.querySelectorAll("ul li") || [];
+  const mobHrs = mobNavContainer?.querySelectorAll("ul hr") || [];
+
+  mobItems.forEach((el) => {
+    const text = el.textContent.trim();
+    if (alwaysVisiblePages.includes(text)) {
+      el.style.display = "";
+    } else {
+      el.style.display = isLoggedIn ? "" : "none";
+    }
+  });
+
+  mobHrs.forEach((hr) => {
+    const nextEl = hr.nextElementSibling;
+    if (nextEl && nextEl.tagName === "LI") {
+      const text = nextEl.textContent.trim();
+      if (alwaysVisiblePages.includes(text)) {
+        hr.style.display = "";
+      } else {
+        hr.style.display = isLoggedIn ? "" : "none";
+      }
+    }
+  });
+
 
     const savedPage = localStorage.getItem("activePage") || "الرئيسية";
     activateNav(savedPage);
@@ -347,6 +398,7 @@ function initNavEvents() {
   });
   // تسجيل خروج
   profileLis[3].addEventListener("click", () => {
+      localStorage.setItem("isLoggedIn", "false");
     window.location.href = "login.html";
   });
 }
@@ -378,16 +430,6 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = "order.html";
           });
         }
-
-        // Navigate to profile.html when clicking images in cart-holder
-        // const cartHolderImages = document.querySelectorAll(".cart-holder img");
-        // if (cartHolderImages.length) {
-        //   cartHolderImages.forEach((img) => {
-        //     img.addEventListener("click", () => {
-        //       window.location.href = "profile.html";
-        //     });
-        //   });
-        // }
 
         const currentPage = window.location.pathname.split("/").pop();
         const map = {

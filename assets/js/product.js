@@ -35,17 +35,27 @@ export function renderProduct(product) {
         <span class="eval-number">${product.evaluation}</span>
       </div>
     </div>
+  
+
     <div class="quantity-price-container">
-      <div class="add-product collapsed">
-        <i class="fa-solid fa-plus"></i>
-        <input type="number" value="0" min="1" />
-        <i class="fa-solid fa-minus"></i>
-      </div>
-      <div class="price">
-        <span>${product.price}</span>
-        <img src="./assets/images/products/currency.svg" alt="SAR" class="currency-icon" />
-      </div>
-    </div>
+  <!-- الزر الكبير للفـتح -->
+  <button class="open-quantity-btn ">
+    <i class="fa-solid fa-plus"></i>
+  </button>
+
+  <!-- واجهة التحكم -->
+  <div class="add-product collapsed">
+    <i class="fa-solid fa-plus"></i>
+    <input type="number" value="1" min="1" />
+    <i class="fa-solid fa-minus"></i>
+  </div>
+
+  <div class="price">
+    <span>${product.price}</span>
+    <img src="./assets/images/products/currency.svg" alt="SAR" class="currency-icon" />
+  </div>
+</div>
+
   `;
 
   // ===== Page-specific logic ===== (محفوظ)
@@ -80,38 +90,47 @@ export function renderProduct(product) {
   }
 
   // ===== Expand / collapse logic ===== (محفوظ)
-  const addProduct = productDiv.querySelector(".add-product");
-  if (addProduct) {
-    const plusIcon = addProduct.querySelector(".fa-plus");
-    const minusIcon = addProduct.querySelector(".fa-minus");
-    const inputField = addProduct.querySelector("input");
+ const addProduct = productDiv.querySelector(".add-product");
+const openBtn = productDiv.querySelector(".open-quantity-btn");
 
-    // عند الضغط على +
-    plusIcon.addEventListener("click", (e) => {
-      e.stopPropagation(); // يمنع propagation للـ div
-      addProduct.classList.add("expanded");
-      inputField.focus();
+if (addProduct && openBtn) {
+  const plusIcon = addProduct.querySelector(".fa-plus");
+  const minusIcon = addProduct.querySelector(".fa-minus");
+  const inputField = addProduct.querySelector("input");
 
-      // ✅ زيادة الكمية
-      inputField.value = parseInt(inputField.value) + 1;
-    });
+  // زر الفتح الكبير
+  openBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    addProduct.classList.add("expanded");
+    openBtn.style.display = "none"; // إخفاء الزر الكبير بعد الفتح
+    inputField.focus();
+  });
 
-    // عند الضغط على -
-    minusIcon.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const currentVal = parseInt(inputField.value);
-      if (currentVal > parseInt(inputField.min)) {
-        inputField.value = currentVal - 1;
-      }
-    });
+  // عند الضغط على +
+  plusIcon.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const currentVal = parseInt(inputField.value);
+    inputField.value = currentVal + 1;
+  });
 
-    // ✅ لو ضغط خارج add-product → يقفلها
-    document.addEventListener("click", (e) => {
-      if (!addProduct.contains(e.target)) {
-        addProduct.classList.remove("expanded");
-      }
-    });
-  }
+  // عند الضغط على -
+  minusIcon.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const currentVal = parseInt(inputField.value);
+    if (currentVal > parseInt(inputField.min)) {
+      inputField.value = currentVal - 1;
+    }
+  });
+
+  // الضغط خارج العنصر → يقفل
+  document.addEventListener("click", (e) => {
+    if (!addProduct.contains(e.target) && !openBtn.contains(e.target)) {
+      addProduct.classList.remove("expanded");
+      openBtn.style.display = "flex"; // رجّع الزر الكبير لما يقفل
+    }
+  });
+}
+
 
   // ===== Star rating gradient ===== (محفوظ)
   const starIcon = productDiv.querySelector(".eval .fa-star");
@@ -129,7 +148,7 @@ export function renderProduct(product) {
 }
 
 
-// ✅ دالة لعرض المنتجات اللي عليها عروض (Offer Products)
+//  دالة لعرض المنتجات اللي عليها عروض (Offer Products)
 export function renderOfferProduct(product) {
   const productDiv = document.createElement("div");
   productDiv.classList.add("product");
@@ -254,7 +273,7 @@ export function renderOfferProduct(product) {
 
 
 
-// ✅ دالة لعرض المنتجات العادية (بدون عروض)
+//  دالة لعرض المنتجات العادية (بدون عروض)
 export function renderNonOfferProduct(product) {
   const productDiv = document.createElement("div");
   productDiv.classList.add("product");

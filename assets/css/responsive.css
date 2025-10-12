@@ -154,6 +154,9 @@
     align-items: center;
     cursor: pointer;
   }
+  #nav-container .account-summary-sub-nav li span{
+    margin-right: 5px;
+  }
   #nav-container .account-summary-sub-nav ul hr {
     width: 100%;
     border: none;
@@ -524,7 +527,7 @@
   }
 
   .mob-close-nav-container .fa-xmark {
-    color: red;
+    color: #000;
   }
 
   .mob-lang-container {
@@ -678,6 +681,7 @@
     background-color: #f5f5f5;
     border-radius: 5px;
     padding: 5px;
+    color: #000 !important;
   }
 
   #pop-log-notification > div:nth-child(2),
@@ -707,7 +711,7 @@
   }
 
   #pop-log-notification > div:last-child button:last-child {
-    background-color: red;
+    background-color: #F97316;
   }
 
   #pop-log-notification > div:last-child button i {
@@ -730,9 +734,11 @@
   #pop-log-notification > div:nth-child(2) p {
     font-size: 10px;
     text-align: center;
+    color: #828282;
   }
 
   #pop-log-notification > div:nth-child(2) h3 {
+    color: #000 !important;
     font-size: 12px;
   }
   /*------------- Account Summary Styles --------*/
@@ -1157,7 +1163,7 @@
     margin-top: 10px;
     background: rgba(240, 255, 243, 0.1);
     padding: 8px 0;
-    border-radius: 6px;
+  
   }
 
   .quantity-price-container .price {
@@ -1211,7 +1217,7 @@
     height: 20%;
     border: 1px solid rgb(237, 237, 237);
     border-radius: 10px;
-    padding: 2%;
+    padding: 1%;
   }
 
   .product-details-container {
@@ -1341,6 +1347,7 @@
   width: 100%;
   min-height: auto; 
   box-sizing: border-box;
+  
 }
 
 .product-list-details {
@@ -1348,11 +1355,12 @@
   align-items: flex-start;  
   gap: 12px;  
   flex: 1;
+  margin: 4px;
 }
 
 .list-img {
-  width: 100px;  
-  height: 100px;  
+  width: 50px;  
+  height: 50px;  
   border: 1px solid rgb(237, 237, 237);
   border-radius: 10px;
 }
@@ -1522,7 +1530,7 @@
   .add-product {
     color: white;
     width: 35px;
-    height: 35px;
+    height: 31px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -1542,7 +1550,7 @@
     justify-content: center;
     align-items: center;
     color: inherit;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease !important;
   }
 
   .add-product input {
@@ -1552,7 +1560,7 @@
     text-align: center;
     border: none;
     border-radius: 10px;
-    margin: 0 8px;
+    /* margin: 0 8px; */
     background-color: transparent;
     transition: opacity 0.35s ease;
     color: #306DFE ;
@@ -1577,6 +1585,61 @@
   .add-product .fa-minus {
     display: none;
   }
+
+
+  .quantity-price-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* الزر الكبير للفتح */
+.open-quantity-btn {
+  border: none;
+  
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #1E3A8A;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.35s ease;
+}
+
+
+
+.open-quantity-btn i {
+  font-size: 16px;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+/* عند الفتح نخفي الزر بسلاسة */
+.open-quantity-btn.hidden {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.add-product {
+  display: none;
+
+}
+
+.add-product.expanded {
+  display: flex;
+}
+
+/* .add-product i {
+  cursor: pointer;
+} */
+
 
   /* Hide collapsed + button */
   .hidden {
@@ -3768,6 +3831,7 @@
     flex-direction: column;
     align-items: center;
     padding-right: 10px;
+    padding-left: 10px;
   }
   #profile-section .details-nav-container > div h3,
   #profile-section .details-nav-container > div h4 {
@@ -4057,6 +4121,7 @@
 .form-group label {
   font-size: 14px;
   margin-bottom: 6px;
+  margin-top: 5px;
 }
 .form-group input,
 .form-group textarea {
@@ -4099,6 +4164,7 @@
   justify-content: center;
   align-items: center;
   gap: 5px;
+  margin-top: 10px;
   /* margin: 20px auto 0; */
 }
 
@@ -4335,6 +4401,7 @@
   width: 95%;
   max-height: 95vh;
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .close-modal ,.close-modal-time{
@@ -6249,7 +6316,7 @@ width: calc(100% / 3);
   #profile-section .manage-dealer .dealer-intro button {
     width: fit-content;
   }
-  /* انا بتاع منتجاتى  */
+  /* product in profile page */
    .add-product-content {
     width: 70%;
   }
@@ -6261,13 +6328,17 @@ width: calc(100% / 3);
     grid-column: span 2;
   }
   .custom-modal {
-  width: 40%;
+  width: 600px;
 
 }
 .modal-footer,.modal-footer-step2 {
   display: flex;
 }
-
+.list-img {
+  width: 100px;  
+  height: 100px;  
+  
+}
  
   /*--------- Footer Section Styles -------*/
   #footer-section {
@@ -6407,6 +6478,7 @@ width: calc(100% / 3);
   }
   #home #pop-log-notification > div:nth-child(2) h3 {
     font-size: 16px;
+    
   }
   #home #pop-log-notification > div:last-child button {
     font-size: 14px;
@@ -6937,24 +7009,38 @@ width: calc(100% / 3);
 
 
 
-/*  */
 
-
-
-
-
-
-
-
-
-
-
-
-/* عند الاختيار */
-/* .dropdown-container.active .dropdown-selected {
-  border-color: #ff8a00;
-  color: #ff8a00;
+/* .open-quantity-btn {
+  
+  border: none;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  cursor: pointer;
+    overflow: hidden;
+    background-color: #1E3A8A;
+    transition: width 0.35s ease, background-color 0.35s ease, color 0.35s ease;
 } */
+
+.add-product {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+
+}
+
+
+
+.add-product i {
+  cursor: pointer;
+}
 
 
 
