@@ -1585,7 +1585,20 @@
   .add-product .fa-minus {
     display: none;
   }
+.add-product {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
 
+}
+
+
+
+.add-product i {
+  cursor: pointer;
+}
 
   .quantity-price-container {
   display: flex;
@@ -7010,37 +7023,9 @@ width: calc(100% / 3);
 
 
 
-/* .open-quantity-btn {
-  
-  border: none;
-  color: #fff;
-  width: 35px;
-  height: 35px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  cursor: pointer;
-    overflow: hidden;
-    background-color: #1E3A8A;
-    transition: width 0.35s ease, background-color 0.35s ease, color 0.35s ease;
-} */
-
-.add-product {
-  display: none;
-  align-items: center;
-  gap: 8px;
-  background-color: #f4f4f4;
-  border-radius: 8px;
-
-}
 
 
 
-.add-product i {
-  cursor: pointer;
-}
 
 
 

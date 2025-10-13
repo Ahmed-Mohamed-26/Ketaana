@@ -167,4 +167,26 @@ pinInputs.forEach((input, index) => {
       pinInputs[index - 1].focus();
     }
   });
+  /*  Start focus from the first filled input  */
+document.addEventListener("DOMContentLoaded", () => {
+  const firstFilledInput = Array.from(pinInputs).find((inp) => inp.value.trim() !== "");
+  if (firstFilledInput) {
+    firstFilledInput.focus();
+  } else {
+    pinInputs[0].focus();
+  }
+});
+
+/*  منع البدء من الاتجاه الآخر */
+pinInputs.forEach((input, index) => {
+  input.addEventListener("focus", () => {
+    
+    const firstEmptyIndex = Array.from(pinInputs).findIndex((i) => i.value === "");
+    if (firstEmptyIndex !== -1 && index > firstEmptyIndex) {
+      pinInputs[firstEmptyIndex].focus();
+    }
+  });
+});
+
+  
 });
