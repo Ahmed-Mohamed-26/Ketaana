@@ -19,10 +19,15 @@ export function renderListProduct(product) {
       </div>
 
         <span class="list-number">${product.number}</span>
+        
         <div class="list-evaluation">
           <div class="factory">
             <img src="${product.factoryImg}" alt="factory-img">
             <p>ياباني</p>
+          </div>
+            <div class="eval handel">
+            <i class="fa-solid fa-star"></i>
+            <span class="eval-number">${product.evaluation}</span>
           </div>
           <div class="yellow-area"> 
           <div class="quantity-price-container">
@@ -30,7 +35,6 @@ export function renderListProduct(product) {
   <button class="open-quantity-btn ">
     <i class="fa-solid fa-plus"></i>
   </button>
-
   <!-- واجهة التحكم -->
   <div class="add-product collapsed">
     <i class="fa-solid fa-plus"></i>
@@ -47,10 +51,7 @@ export function renderListProduct(product) {
         </div>
         </div>
        
-            <div class="eval">
-            <i class="fa-solid fa-star"></i>
-            <span class="eval-number">${product.evaluation}</span>
-          </div>
+          
         
       </div>
     </div>

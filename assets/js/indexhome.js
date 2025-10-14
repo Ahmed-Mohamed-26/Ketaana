@@ -95,11 +95,14 @@ function closeAllDropdowns() {
 
 if (countryChevron && countryUl) {
   const countryInputField = document.getElementById("country");
+   
 
  
   countryChevron.addEventListener("mousedown", (e) => {
     e.preventDefault();
     e.stopPropagation();
+    const categoryValue = (document.getElementById("category")?.value || "").trim();
+    if (categoryValue === "أصلی") return;
     toggleDropdownInstant(countryUl);
   });
 
@@ -108,6 +111,8 @@ if (countryChevron && countryUl) {
     countryInputField.addEventListener("mousedown", (e) => {
       e.preventDefault();
       e.stopPropagation();
+          const categoryValue = (document.getElementById("category")?.value || "").trim();
+      if (categoryValue === "أصلی") return;
       // افتح القايمة فقط لو كانت مقفولة
       if (countryUl.style.display === "none" || countryUl.style.display === "")
         toggleDropdownInstant(countryUl, true);
@@ -128,11 +133,14 @@ if (countryChevron && countryUl) {
 //  شركة الصنع
 if (companyChevron && companyUl) {
   const companyInputField = document.getElementById("company");
+  
 
   // عند الضغط على الأيقونة
   companyChevron.addEventListener("mousedown", (e) => {
     e.preventDefault();
     e.stopPropagation();
+      const categoryValue = (document.getElementById("category")?.value || "").trim();
+      if (categoryValue === "أصلی") return;
     toggleDropdownInstant(companyUl);
   });
 
@@ -141,6 +149,8 @@ if (companyChevron && companyUl) {
     companyInputField.addEventListener("mousedown", (e) => {
       e.preventDefault();
       e.stopPropagation();
+        const categoryValue = (document.getElementById("category")?.value || "").trim();
+      if (categoryValue === "أصلی") return;
       // افتح القايمة فقط لو كانت مقفولة
       if (companyUl.style.display === "none" || companyUl.style.display === "")
         toggleDropdownInstant(companyUl, true);
