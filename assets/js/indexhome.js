@@ -333,4 +333,21 @@ document.addEventListener("mousedown", (e) => {
   }
   handleResponsiveLayout();
   window.addEventListener("resize", handleResponsiveLayout);
+
+  //  إضافة هذا الجزء في آخر الملف فقط
+window.addEventListener("DOMContentLoaded", () => {
+  const filterIcon = document.querySelector("#search-form i.fa-filter");
+  const searchTitle = document.querySelector(".search-form-container h3");
+
+  if (filterIcon && searchTitle) {
+    filterIcon.addEventListener("click", () => {
+      // لو الشاشة موبايل (أقل من 768px)
+      if (window.innerWidth < 768) {
+        searchTitle.style.display = "none";
+        searchForm.style.marginTop = "100px";
+      }
+    });
+  }
+});
+
 });
